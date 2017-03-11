@@ -1,5 +1,5 @@
 # opens a file that contains a list of either male or female names
-def openFile(gender):
+def get_names_from_file(gender):
 	names_in_file = []
 	if(gender == 'M' or gender == 'MALE'):
 		# opens a list of boys names contained in the cwd
@@ -147,7 +147,7 @@ if __name__ == '__main__':
 		num_names = get_num_names()
 		
 		# creates a list of all the names in the file
-		names_in_file = openFile(gender)
+		names_in_file = get_names_from_file(gender)
 		rules = create_rules(names_in_file)
 
 		# creates a list of names
