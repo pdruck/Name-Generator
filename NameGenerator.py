@@ -1,5 +1,5 @@
 # opens a file that contains a list of either male or female names
-def get_names_from_file(gender):
+def openFile(gender):
 	names_in_file = []
 	if(gender == 'M' or gender == 'MALE'):
 		# opens a list of boys names contained in the cwd
@@ -112,8 +112,8 @@ def generate_name(names_in_file, rules, min_length, max_length):
 			current_sequence = current_sequence[1] + current_char
 
 # checks if the generated name is already in the list of names
-def is_unique(generated_name, names_in_file):
-	for name in names_in_file:
+def is_unique(generated_name, name_list):
+	for name in name_list:
 		if(generated_name.lower() == name.lower()):
 			return False
 	return True
@@ -147,12 +147,15 @@ if __name__ == '__main__':
 		num_names = get_num_names()
 		
 		# creates a list of all the names in the file
-		names_in_file = get_names_from_file(gender)
+		names_in_file = openFile(gender)
 		rules = create_rules(names_in_file)
 
 		# creates a list of names
 		while(len(name_list) < num_names):
-			name_list.append(generate_name(names_in_file, rules, min_length, max_length))
+			name = generate_name(names_in_file, rules, min_length, max_length)
+			# if generated name is not already in the list, add name to the list
+			if(is_unique(name, name_list)):
+				name_list.append(name)
 
 		print_list(name_list)
 
