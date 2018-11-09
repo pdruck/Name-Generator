@@ -1,7 +1,7 @@
 # Name-Generator
 User Input: Gender, Minimum name length, Maximum name length, Number of generated names
 
-This program reads two files that contain lists of the most common boys and girls names.  
+This program reads two files that contain lists of the most names for boys and girls.  
 
 A 2nd-Order Markov Model is then used to create a dictionary where the **key** represents a sequence of 2 characters and the **value** represents a list of characters where each character is the letter following the sequence used as the key.  This list will sometimes contain duplicates for more common character sequences.  
 
