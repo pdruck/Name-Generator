@@ -1,4 +1,3 @@
-#test2
 # opens a file that contains a list of either male or female names
 def openFile(gender):
 	names_in_file = []
